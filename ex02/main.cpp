@@ -4,7 +4,7 @@
 int main()
 {
     FragTrap scavtrap1;
-    std::string name = "ScavTrapName";
+    std::string name = "Target1";
     FragTrap scavtrap2(name);
     FragTrap scavtrap3(scavtrap2);
     FragTrap scavtrap4;

@@ -49,8 +49,20 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-    if (m_energy <= 0 || m_health <= 0)
-        return ;
-    std::cout << "Scavtrap " << this->m_name << " attacks " << target << ", causing " << this->m_atk_dmg << " points of damage!" << std::endl;
-    m_energy--;
+	t_ClapTrap	*tmp;
+
+	if (m_energy <= 0 || m_health <= 0)
+		return ;
+	
+	std::cout << "ScavTrap " << m_name << " attacks " << target << ", causing " << m_atk_dmg << " points of damage!" << std::endl;
+	
+	tmp = ClapTrap::all_instances;
+	while (tmp)
+	{
+		if (static_cast<ClapTrap*>(tmp->element)->get_name() == target)
+			static_cast<ClapTrap*>(tmp->element)->takeDamage(m_atk_dmg);
+		tmp = tmp->next;
+	}
+
+	m_energy--;
 }

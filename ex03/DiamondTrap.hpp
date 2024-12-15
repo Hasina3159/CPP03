@@ -12,12 +12,13 @@ class DiamondTrap : public FragTrap, public ScavTrap
 private:
     std::string m_name;
 public:
-    DiamondTrap();
+    DiamondTrap( void );
     DiamondTrap(std::string &name);
     DiamondTrap(DiamondTrap &other);
-    DiamondTrap operator=(DiamondTrap &other);
+    DiamondTrap &operator=(DiamondTrap &other);
     virtual ~DiamondTrap();
     void attack(const std::string& target);
+    void whoAmI( void ) const;
 };
 
 #endif
