@@ -10,7 +10,7 @@ int main()
 	//ScavTrap scavtrap4;
 	//scavtrap4 = scavtrap2;
 	//scavtrap1.guardGate();
-	scavtrap2.attack("Target1");
+	scavtrap2.attack("Target1ssssss");
 	//scavtrap3.attack("Target1");
 	//scavtrap4.attack("Target3");
 	//scavtrap4.guardGate();

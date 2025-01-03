@@ -1,19 +1,19 @@
 #include "ClapTrap.hpp"
 
-t_ClapTrap *ClapTrap::all_instances = nullptr;
+t_ClapTrap *ClapTrap::all_instances = NULL;
 
 void	ClapTrap::add_self()
 {
 	t_ClapTrap	*tmp;
 	t_ClapTrap	*newClapTrap = new t_ClapTrap();
 
-	if (newClapTrap == nullptr)
+	if (newClapTrap == NULL)
 		return;
 
 	newClapTrap->element = this;
-	newClapTrap->next = nullptr;
+	newClapTrap->next = NULL;
 
-	if (ClapTrap::all_instances == nullptr)
+	if (ClapTrap::all_instances == NULL)
 	{
 		ClapTrap::all_instances = newClapTrap;
 		return;
@@ -32,7 +32,7 @@ void	ClapTrap::remove_self()
 	t_ClapTrap	*prec;
 	int			i;
 
-	if (ClapTrap::all_instances == nullptr)
+	if (ClapTrap::all_instances == NULL)
 		return;
 
 	i = 0;
