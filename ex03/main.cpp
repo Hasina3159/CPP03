@@ -6,7 +6,7 @@ int main() {
 	DiamondTrap dt1(name1);
 	DiamondTrap dt2(name2);
 
-	dt2.attack("Player2");
+	dt1.attack("Player2");
 	dt2.whoAmI();
 	return 0;
 }

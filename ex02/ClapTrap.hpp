@@ -12,6 +12,7 @@ protected:
 
 	void			remove_self();
 	void			add_self();
+	void 			base_attack(const std::string& target);
 
 	std::string 	m_name;
 	unsigned int	m_health;

@@ -51,7 +51,8 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::attack(const std::string& target)
 {
-	ScavTrap::attack(target + "_clap_name");
+	std::cout << "DiamondTrap " << m_name << " attacks " << target << ", causing " << m_atk_dmg << " points of damage!" << std::endl;
+	ScavTrap::base_attack(target + "_clap_name");
 }
 
 void	DiamondTrap::whoAmI( void ) const

@@ -46,3 +46,9 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap is now in Gatekeeper mode"<< std::endl;
 }
+
+void ScavTrap::attack(const std::string& target)
+{
+	std::cout << "ScavTrap " << m_name << " attacks " << target << ", causing " << m_atk_dmg << " points of damage!" << std::endl;
+	ClapTrap::base_attack(target);
+}

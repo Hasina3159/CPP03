@@ -93,7 +93,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap &other)
 	return (*this);
 }
 
-void ClapTrap::attack(const std::string& target)
+void ClapTrap::base_attack(const std::string& target)
 {
 	t_ClapTrap	*tmp;
 
@@ -107,21 +107,28 @@ void ClapTrap::attack(const std::string& target)
 			static_cast<ClapTrap*>(tmp->element)->takeDamage(m_atk_dmg);
 		tmp = tmp->next;
 	}
-
-	std::cout << "ClapTrap " << m_name << " attacks " << target << ", causing " << m_atk_dmg << " points of damage!" << std::endl;
+	
 	m_energy--;
 }
+
+void ClapTrap::attack(const std::string& target)
+{
+	std::cout << "ClapTrap " << m_name << " attacks " << target << ", causing " << m_atk_dmg << " points of damage!" << std::endl;
+	base_attack(target);
+
+}
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (m_health <= 0)
 		return ;
 	if (amount > m_health)
 	{
-		std::cout << m_name << " is taking " << amount << " damage!"<< std::endl;
+		std::cout << m_name << " is taking " << amount << " damage!  [HP : 0]" << std::endl;
 		m_health = 0;
 		return ;
 	}
-	std::cout << m_name << " is taking damage!"<< std::endl;
+	std::cout << m_name << " is taking " << amount << " damage!  [HP :" << m_health << "]" << std::endl;
 	m_health = m_health - amount;
 }
 void ClapTrap::beRepaired(unsigned int amount)
